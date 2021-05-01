@@ -13,7 +13,8 @@ stage("Image Prune"){
   stage('Build Docker Image'){
     sh '''
     docker build -t poojadraut55/my-app:0.0.1 .
-    docker-compose up 
+    pwd
+    docker-compose up --build
     '''
     
   }
