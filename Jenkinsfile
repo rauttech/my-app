@@ -7,6 +7,9 @@ node{
     def mvnHome = tool name: 'maven-3', type: 'maven'
     sh "${mvnHome}/bin/mvn clean package"
   }
+stage("Image Prune"){
+        sh 'sudo docker system prune --all'
+    }
   stage('Build Docker Image'){
     sh 'docker build -t poojadraut55/my-app:0.0.1 .'
   }
