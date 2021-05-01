@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    build: .
+    environment:
+     - ASPNETCORE_ENVIRONMENT=Staging
+     - ConnectionStrings__Default=Server=database,1433;Database=CommercialPeople; User ID=sa;Password=90a0dd27-637d-4f87-9bbe-e9e1ed6d327e;  
+    ports:
+     - "1445:80" 
