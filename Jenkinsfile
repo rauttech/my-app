@@ -15,7 +15,7 @@ node{
     withCredentials([string(credentialsId: 'docker-hub', variable: 'password')]) {
       sh "docker login -u poojadraut55 -p ${password}"
     }
-    sh 'docker push kammana/my-app:0.0.1'
+    sh 'docker push poojadraut55/my-app:0.0.1'
   }
   stage('Remove Old Containers'){
     sshagent(['my-app-dev']) {
