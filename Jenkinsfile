@@ -14,7 +14,7 @@ stage("Image Prune"){
     sh '''
     docker build -t poojadraut55/my-app:0.0.1 .
     docker-compose up 
-    
+    '''
     
   }
 
