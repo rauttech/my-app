@@ -15,8 +15,8 @@ stage("Image Prune"){
   }
 
   stage('Upload Image to DockerHub'){
-    withCredentials([string(credentialsId: 'docker-hub', variable: 'password')]) {
-      sh "docker login -u poojadraut55 -p ${password}"
+     withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+      sh "docker login -u poojadraut55 -p ${PASSWORD}"
     }
     sh 'docker push poojadraut55/my-app:0.0.1'
   }
