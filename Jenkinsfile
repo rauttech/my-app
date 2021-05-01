@@ -8,12 +8,12 @@ node{
     sh "${mvnHome}/bin/mvn clean package"
   }
   stage('Build Docker Image'){
-    sh 'docker build -t kammana/my-app:0.0.1 .'
+    sh 'docker build -t poojadraut55/my-app:0.0.1 .'
   }
 
   stage('Upload Image to DockerHub'){
     withCredentials([string(credentialsId: 'docker-hub', variable: 'password')]) {
-      sh "docker login -u kammana -p ${password}"
+      sh "docker login -u poojadraut55 -p ${password}"
     }
     sh 'docker push kammana/my-app:0.0.1'
   }
